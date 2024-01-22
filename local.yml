@@ -60,3 +60,23 @@
       dest: ~/
       owner: mateusz
       group: mateusz
+
+    - name: add ansible user
+      user:
+        name: ansibleupdate
+        system: yes
+    
+    - name: set sudo for ansible user
+      copy:
+        src: files/sudoer_ansibleupdate
+        dest: /etc/sudoers.d/velociraptor
+        owner: root
+        group: root
+        mode: 0440
+
+    - name: add ansible-pulll as cron 
+      cron:
+        name: ansible auto-provision
+        user: ansibleupdate
+        minute: "*/10"
+        job: ansible-pull -o -U https://github.com/Zawisza-Czarny/ansible_setup.git
