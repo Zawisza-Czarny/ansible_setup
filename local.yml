@@ -37,6 +37,7 @@
         repo: https://aur.archlinux.org/yay-bin.git
         dest: /home/mateusz/yay
         update: true
+        become: false
 
     - name: install yay
       command:
