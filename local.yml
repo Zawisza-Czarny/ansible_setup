@@ -35,12 +35,12 @@
     - name: clone yay
       git:
         repo: https://aur.archlinux.org/yay-bin.git
-        dest: /yay
+        dest: home/mateusz/yay
         update: true
 
     - name: install yay
       command:
-        chdir: /yay
+        chdir: home/mateusz/yay
         cmd: "makepkg -sfi --noconfirm"
         become: false
 
