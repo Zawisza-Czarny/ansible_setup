@@ -37,13 +37,14 @@
         repo: https://aur.archlinux.org/yay-bin.git
         dest: /home/mateusz/yay
         update: true
-        become: false
 
     - name: install yay
       command:
         chdir: /home/mateusz/yay
         cmd: "makepkg -sfi --noconfirm"
         creates: /usr/bin/yay
+        vars:
+          ansible_become: false
 
     - name: copy bash_profile
       copy:
