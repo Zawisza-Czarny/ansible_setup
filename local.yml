@@ -39,8 +39,8 @@
         update: true
 
     - name: install yay
-      command: chdir=/yay makepkg -sfi --noconfirm
       become: false
+      command: chdir=/yay makepkg -sfi --noconfirm
 
     - name: copy bash_profile
       copy:
