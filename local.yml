@@ -41,15 +41,15 @@
     - name: install yay
       chdir: /home/mateusz/yay
       command: "makepkg -sfi --noconfirm"
-      vars:
-        ansible_become: false 
-
+      become: false
+    
     - name: copy bash_profile
       copy:
         src: files/.bash_profile
         dest: /home/mateusz
         owner: mateusz
         group: mateusz
+      
 
     - name: add ansible user
       user:
