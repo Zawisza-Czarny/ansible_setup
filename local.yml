@@ -37,20 +37,20 @@
 
     - name: copy config files
       copy: 
-        src: files/config/
-        dest: ~/.config/
+        src: files/config
+        dest: ~/.config
         owner: mateusz
         group: mateusz
      
     - name: clone yay
       git:
         repo: https://aur.archlinux.org/yay-bin.git
-        dest: "{{ srcdir }}/yay"
+        dest: /yay
         update: true
 
     - name: install yay
       command:
-        chdir: "{{ srcdir }}/yay"
+        chdir: /yay
         cmd: "makepkg -sfi --noconfirm"
         creates: /usr/bin/yay
 
