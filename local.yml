@@ -42,7 +42,7 @@
       command:
         chdir: home/mateusz/yay
         cmd: "makepkg -sfi --noconfirm"
-        become: false
+      become: false
 
     - name: copy bash_profile
       copy:
