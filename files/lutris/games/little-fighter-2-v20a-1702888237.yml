@@ -1,0 +1,48 @@
+game:
+  arch: win32
+  exe: drive_c/Program Files/LittleFighter/lf2.exe
+  prefix: /home/mateusz/Games/little-fighter-2
+game_slug: little-fighter-2
+name: Little Fighter 2
+requires: null
+script:
+  files:
+  - setup: http://lf2.net/LF2_v2.0a.exe
+  game:
+    arch: win32
+    exe: drive_c/Program Files/LittleFighter/lf2.exe
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win32
+      install_gecko: 'False'
+      install_mono: 'False'
+      prefix: /home/mateusz/Games/little-fighter-2
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-25-x86_64/bin/wine
+  - task:
+      app: videomemorysize=512
+      arch: win32
+      prefix: /home/mateusz/Games/little-fighter-2
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-25-x86_64/bin/wine
+  - task:
+      app: vcrun2005
+      arch: win32
+      prefix: /home/mateusz/Games/little-fighter-2
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-25-x86_64/bin/wine
+  - task:
+      app: wmp9
+      arch: win32
+      prefix: /home/mateusz/Games/little-fighter-2
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-25-x86_64/bin/wine
+  - task:
+      arch: win32
+      env: {}
+      executable: /home/mateusz/.cache/lutris/installer/little-fighter-2/setup/LF2_v2.0a.exe
+      prefix: /home/mateusz/Games/little-fighter-2
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-25-x86_64/bin/wine
+slug: little-fighter-2-v20a
+system: {}
+variables: {}
+version: v2.0a
+wine: {}
+year: 1999

@@ -1,0 +1,37 @@
+game:
+  exe: /home/mateusz/Games/house-flipper-2/drive_c/House Flipper 2/UnityCrashHandler64.exe
+  prefix: /home/mateusz/Games/house-flipper-2
+game_slug: house-flipper-2
+name: house flipper 2
+requires: null
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/mateusz/Downloads/House.Flipper.2-RUNE/setup.exe
+      prefix: /home/mateusz/Games/house-flipper-2
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-25-x86_64/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: house-flipper-2-setup
+system:
+  env:
+    LC_ALL: ''
+  locale: ''
+variables: {}
+version: Setup file
+wine:
+  ShowCrashDialog: true
+  dxvk: false
+  show_debug: ''
+  version: wine-ge-8-25-x86_64
+  vkd3d: true
+year: null

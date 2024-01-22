@@ -1,0 +1,47 @@
+game:
+  arch: win64
+  args: --exec="launch WTCG"
+  exe: drive_c/Program Files (x86)/Battle.net/Battle.net.exe
+  prefix: /home/mateusz/Games/battlenet
+game_slug: hearthstone
+name: Hearthstone
+requires: blizzard-battlenet-standard
+script:
+  game:
+    arch: win64
+    args: --exec="launch WTCG"
+    exe: drive_c/Program Files (x86)/Battle.net/Battle.net.exe
+    prefix: $GAMEDIR
+  requires: blizzard-battlenet-standard
+  system:
+    env:
+      DXVK_HUD: compiler
+      DXVK_STATE_CACHE_PATH: $GAMEDIR
+      STAGING_SHARED_MEMORY: 1
+      __GL_SHADER_DISK_CACHE: 1
+      __GL_SHADER_DISK_CACHE_PATH: $GAMEDIR
+      __GL_SHADER_DISK_CACHE_SKIP_CLEANUP: 1
+  wine:
+    battleye: false
+    eac: false
+    fsr: false
+    override:
+      locationapi: d
+slug: hearthstone-battlenet-launcher
+system:
+  env:
+    DXVK_HUD: compiler
+    DXVK_STATE_CACHE_PATH: /home/mateusz/Games/battlenet
+    STAGING_SHARED_MEMORY: '1'
+    __GL_SHADER_DISK_CACHE: '1'
+    __GL_SHADER_DISK_CACHE_PATH: /home/mateusz/Games/battlenet
+    __GL_SHADER_DISK_CACHE_SKIP_CLEANUP: '1'
+variables: {}
+version: Battle.net launcher
+wine:
+  battleye: false
+  eac: false
+  fsr: false
+  override:
+    locationapi: d
+year: 2014

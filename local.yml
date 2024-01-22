@@ -34,3 +34,24 @@
           - amdvlk
           - alacritty
           - polkit-gnome
+
+    - name: copy config files
+      copy: 
+        src: files/
+        dest: ~/.config/
+        owner: root
+        group: root
+     
+    - name: Clone yay
+      git:
+        repo: https://aur.archlinux.org/yay-bin.git
+        dest: "{{ srcdir }}/yay"
+        update: true
+
+    - name: Install yay
+      command:
+        chdir: "{{ srcdir }}/yay"
+        cmd: "makepkg -sfi --noconfirm"
+        creates: /usr/bin/yay
+
+

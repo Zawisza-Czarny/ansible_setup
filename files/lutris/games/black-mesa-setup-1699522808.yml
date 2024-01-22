@@ -1,0 +1,33 @@
+game:
+  exe: /home/mateusz/Gry/Black Mesa/bms.exe
+  prefix: /home/mateusz/Gry/Black Mesa
+game_slug: black-mesa
+name: Black mesa
+requires: null
+script:
+  files:
+  - setupfile: N/A:Select the setup file
+  game:
+    exe: _xXx_AUTO_WIN32_xXx_
+    prefix: $GAMEDIR
+  installer:
+  - task:
+      arch: win64
+      env:
+        LC_ALL: ''
+      executable: /home/mateusz/Downloads/Black Mesa - Definitive Edition [FitGirl
+        Repack]/setup.exe
+      prefix: /home/mateusz/Gry/Black Mesa
+      wine_path: /home/mateusz/.local/share/lutris/runners/wine/wine-ge-8-22-x86_64/bin/wine
+  system:
+    env:
+      LC_ALL: ''
+slug: black-mesa-setup
+system:
+  env:
+    LC_ALL: ''
+variables: {}
+version: Setup file
+wine:
+  version: wine-ge-8-24-x86_64
+year: null

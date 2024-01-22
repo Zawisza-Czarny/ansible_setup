@@ -1,0 +1,3 @@
+system: {}
+wine:
+  version: wine-ge-8-25-x86_64
