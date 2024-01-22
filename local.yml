@@ -35,21 +35,21 @@
     - name: clone yay
       git:
         repo: https://aur.archlinux.org/yay-bin.git
-        dest: home/mateusz/yay
+        dest: /home/mateusz/yay
         update: true
 
     - name: install yay
-      chdir: /home/mateusz/yay
-      command: "makepkg -sfi --noconfirm"
-      become: false
-    
+      command:
+        chdir: /home/mateusz/yay
+        cmd: "makepkg -sfi --noconfirm"
+        creates: /usr/bin/yay
+
     - name: copy bash_profile
       copy:
         src: files/.bash_profile
         dest: /home/mateusz
         owner: mateusz
         group: mateusz
-      
 
     - name: add ansible user
       user:
