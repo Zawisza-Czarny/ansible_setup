@@ -56,10 +56,10 @@
 
     - name: copy bash_profile
       copy:
-      src: files/.bash_profile
-      dest: ~/
-      owner: mateusz
-      group: mateusz
+        src: files/.bash_profile
+        dest: ~/
+        owner: mateusz
+        group: mateusz
 
     - name: add ansible user
       user:
