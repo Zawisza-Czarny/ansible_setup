@@ -42,7 +42,7 @@
       command:
         chdir: /yay
         cmd: "makepkg -sfi --noconfirm"
-        creates: /usr/bin/yay
+        become_user: your_non_root_user
 
     - name: copy bash_profile
       copy:
