@@ -39,12 +39,11 @@
         update: true
 
     - name: install yay
+      become: false
       command:
         chdir: /home/mateusz/yay
         cmd: "makepkg -sfi --noconfirm"
         creates: /usr/bin/yay
-        vars:
-          ansible_become: false
 
     - name: copy bash_profile
       copy:
