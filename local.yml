@@ -38,7 +38,7 @@
     - name: copy config files
       copy: 
         src: files/config
-        dest: ~/.config
+        dest: /home/mateusz/.config
         owner: mateusz
         group: mateusz
      
@@ -57,7 +57,7 @@
     - name: copy bash_profile
       copy:
         src: files/.bash_profile
-        dest: ~/
+        dest: /home/mateusz
         owner: mateusz
         group: mateusz
 
