@@ -4,6 +4,33 @@
   become: true
 
   tasks:
-    - name: install htop
+    - name: install packages
       package:
-        name: htop
+        name:
+          - htop
+          - neovim
+          - firefox
+          - git
+          - sway
+          - waybar
+          - vulkan-radeon
+          - qemu
+          - virt-manager
+          - virt-viewer
+          - dnsmasq
+          - bridge-utils
+          - libguestfs
+          - ebtables
+          - vde2
+          - openbsd-netcat
+          - ttf-font-awesome
+          - transmission-qt
+          - spotify-launcher
+          - mesa
+          - mako
+          - chiaki
+          - gammastep
+          - thunar
+          - amdvlk
+          - alacritty
+          - polkit-gnome
