@@ -62,7 +62,7 @@
     become: true
     copy:
       src: files/sudoer_ansibleupdate
-      dest: /etc/sudoers.d/velociraptor
+      dest: /etc/sudoers.d/ansibleupdate
       owner: root
       group: root
       mode: 0440
@@ -71,6 +71,6 @@
     become: true
     cron:
       name: ansible auto-provision
-      user: sudoer_ansibleupdate
+      user: ansibleupdate
       minute: "*/10"
       job: ansible-pull -o -U https://github.com/Zawisza-Czarny/ansible_setup.git
