@@ -54,8 +54,8 @@
 
   - name: add ansible user
     user:
-    name: ansibleupdate
-    system: yes
+      name: ansibleupdate
+      system: yes
     
   - name: set sudo for ansible user
     copy:
