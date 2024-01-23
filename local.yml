@@ -67,7 +67,7 @@
 
   - name: add ansible-pulll as cron
     cron:
-    name: ansible auto-provision
-    user: sudoer_ansibleupdate
-    minute: "*/10"
-    job: ansible-pull -o -U https://github.com/Zawisza-Czarny/ansible_setup.git
+      name: ansible auto-provision
+      user: sudoer_ansibleupdate
+      minute: "*/10"
+      job: ansible-pull -o -U https://github.com/Zawisza-Czarny/ansible_setup.git
