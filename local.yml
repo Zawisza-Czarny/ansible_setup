@@ -1,10 +1,10 @@
 ---
 - hosts: localhost
   connection: local
-  become: true
 
   tasks:
     - name: install packages
+      become: true
       package:
         name:
           - htop
@@ -39,7 +39,6 @@
         update: true
 
     - name: install yay
-      become: false
       command:
         chdir: /home/mateusz/yay
         cmd: "makepkg -sfi --noconfirm"
@@ -53,11 +52,13 @@
         group: mateusz
 
     - name: add ansible user
+      become: true
       user:
         name: ansibleupdate
         system: yes
     
     - name: set sudo for ansible user
+      become: true
       copy:
         src: files/sudoer_ansibleupdate
         dest: /etc/sudoers.d/velociraptor
@@ -65,7 +66,8 @@
         group: root
         mode: 0440
 
-    - name: add ansible-pulll as cron 
+    - name: add ansible-pulll as cron
+      become: true
       cron:
         name: ansible auto-provision
         user: ansibleupdate
