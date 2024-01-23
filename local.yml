@@ -4,8 +4,8 @@
   become: true 
 
   tasks:
-    - name: install packages
-      package:
+  - name: install packages
+    package:
         name:
           - htop
           - neovim
@@ -25,49 +25,49 @@
           - alacritty
           - polkit-gnome
 
-    - name: copy config files
-      copy: 
+  - name: copy config files
+    copy: 
         src: files/config
         dest: /home/mateusz/.config
         owner: mateusz
         group: mateusz
      
-    - name: clone yay
-      git:
+  - name: clone yay
+    git:
         repo: https://aur.archlinux.org/yay-bin.git
         dest: /home/mateusz/yay
         update: true
 
-    - name: install yay
-      become: yes
-      command:
-        chdir: /home/mateusz/yay
-        cmd: "makepkg -sfi --noconfirm"
-        creates: /usr/bin/yay
+  - name: install yay
+    become: yes
+    command:
+      chdir: /home/mateusz/yay
+      cmd: "makepkg -sfi --noconfirm"
+      creates: /usr/bin/yay
 
-    - name: copy bash_profile
-      copy:
+  - name: copy bash_profile
+    copy:
         src: files/.bash_profile
         dest: /home/mateusz
         owner: mateusz
         group: mateusz
 
-    - name: add ansible user
-      user:
-        name: ansibleupdate
-        system: yes
+  - name: add ansible user
+    user:
+    name: ansibleupdate
+    system: yes
     
-    - name: set sudo for ansible user
-      copy:
-        src: files/sudoer_ansibleupdate
-        dest: /etc/sudoers.d/velociraptor
-        owner: root
-        group: root
-        mode: 0440
+  - name: set sudo for ansible user
+    copy:
+      src: files/sudoer_ansibleupdate
+      dest: /etc/sudoers.d/velociraptor
+      owner: root
+      group: root
+      mode: 0440
 
-    - name: add ansible-pulll as cron
-      cron:
-        name: ansible auto-provision
-        user: ansibleupdate
-        minute: "*/10"
-        job: ansible-pull -o -U https://github.com/Zawisza-Czarny/ansible_setup.git
+  - name: add ansible-pulll as cron
+    cron:
+    name: ansible auto-provision
+    user: sudoer_ansibleupdate
+    minute: "*/10"
+    job: ansible-pull -o -U https://github.com/Zawisza-Czarny/ansible_setup.git
