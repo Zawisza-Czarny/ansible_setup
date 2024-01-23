@@ -39,7 +39,6 @@
         update: true
 
   - name: install yay
-    become: yes
     command:
       chdir: /home/mateusz/yay
       cmd: "makepkg -sfi --noconfirm"
