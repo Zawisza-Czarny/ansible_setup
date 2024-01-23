@@ -40,6 +40,7 @@
 
   - name: install yay
     become: false
+    become_user: mateusz
     command:
       chdir: /home/mateusz/yay
       cmd: "makepkg -sfi --noconfirm"
